@@ -1,34 +1,21 @@
-#!/bin/bash
 
-echo "🔧 Setting up Git Shell Aliases..."
+eval "$(gh copilot alias -- bash)"
 
-
-if ! grep -q "alias gc='git commit -m'" ~/.bashrc; then
-    cat <<EOL >> ~/.bashrc
-
-# Git Shell Aliases
 alias gc='git commit -m'
-alias ga='git add .'
 alias gp='git push'
-alias gpl='git pull'
-alias gst='git status'
-alias gl='git log --oneline --graph --decorate'
-alias gco='git checkout'
+alias gs='git status'
+alias gpm='git push origin main'
+alias ga='git add'
+alias gb='git branch'
+alias gbd='git branch -D'
 alias gcb='git checkout -b'
-alias gd='git diff'
-alias grb='git rebase'
-alias gm='git merge'
-alias gr='git remote -v'
+alias gch='git checkout'
+alias pull='git pull'
+alias grs='git restore --stage'
 alias gcl='git clone'
-
-# Command to show all Git aliases
-alias show-git-aliases="alias | grep 'git '"
-EOL
-
-    echo "✅ Git Shell Aliases Installed!"
-else
-    echo "⚡ Git aliases are already set up!"
-fi
+alias gr='git remote add origin'
+alias gv='git remote -v'
 
 
-source ~/.bashrc
+
+
